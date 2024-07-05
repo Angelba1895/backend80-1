@@ -10,8 +10,11 @@ ConectarBD();
 app.use(cors());
 
 app.use(express.json());
+//Rutas de mi aplicación
 app.use('/api/clientes',require('../routes/cliente'));
 app.use('/api/productos',require('../routes/producto'));
+app.use('/api/auth', require('../routes/auth'));
+app.use('/api/usuarios', require('../routes/usuarios'));
 
 
 app.get('/', (req, res) =>{

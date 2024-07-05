@@ -5,10 +5,10 @@ exports.agregarClientes = async(req, res) => {
 
     try {
         
-    let clientes
-    clientes = new Cliente(req.body);
-    await clientes.save();
-    res.send(clientes);    
+        let clientes
+        clientes = new Cliente(req.body);
+        await clientes.save();
+        res.send(clientes);    
 
     } catch (error) {
        console.log(error);
@@ -71,9 +71,9 @@ exports.actualizarClientes = async(req, res) => {
 exports.modificarClientes = async(req, res) => {
     
     try{
-    const cliente = await Cliente.findByIdAndUpdate(req.params.id, req.body, { new: true});
-    if(!cliente){
-        return res.status(404).send('Cliente no encontrado');
+        const cliente = await Cliente.findByIdAndUpdate(req.params.id, req.body, { new: true});
+        if(!cliente){
+            return res.status(404).send('Cliente no encontrado');
     }
     res.json(cliente)
     }catch (error) {
